@@ -1,4 +1,4 @@
-import { useRef } from "react";
+﻿import { useRef } from "react";
 import AppFolder, { type FolderChild } from "./AppFolder";
 import PhotosPage from "./PhotosPage";
 import NotesPage from "./NotesPage";
@@ -20,10 +20,10 @@ import { MAPS_URL } from "../lib/maps";
 import { HOME } from "./SafariPage";
 
 // Each tapped event opens the Calendar app showing that event's detail.
-// Opened from a widget (not an icon) → no landing-icon morph.
+// Opened from a widget (not an icon) â†’ no landing-icon morph.
 const calendarAppForEvent = (event: CalendarEvent): AppDef => ({
   key: "calendar",
-  iconSrc: "/icons/calendar.png",
+  iconSrc: "${import.meta.env.BASE_URL}icons/calendar.png",
   render: () => <CalendarPage event={event} />,
   chrome: { closeButton: "none" },
   hideIcon: true,
@@ -32,50 +32,50 @@ const calendarAppForEvent = (event: CalendarEvent): AppDef => ({
 const ITEMS: FolderChild[] = [
   {
     key: "calendar",
-    label: "Lịch",
-    iconSrc: "/icons/calendar.png",
+    label: "Lá»‹ch",
+    iconSrc: "${import.meta.env.BASE_URL}icons/calendar.png",
     app: <CalendarPage event={CALENDAR_EVENTS[1]} />,
     chrome: { closeButton: "none" },
   },
-  { key: "map", label: "Bản đồ", iconSrc: "/icons/map.svg", href: MAPS_URL },
+  { key: "map", label: "Báº£n Ä‘á»“", iconSrc: "${import.meta.env.BASE_URL}icons/map.svg", href: MAPS_URL },
   {
     key: "notes",
-    label: "Ghi chú",
-    iconSrc: "/icons/notes.svg",
+    label: "Ghi chÃº",
+    iconSrc: "${import.meta.env.BASE_URL}icons/notes.svg",
     app: <NotesPage />,
     chrome: { closeButton: "none" },
   },
   {
     key: "photos",
-    label: "Ảnh",
-    iconSrc: "/icons/photos.svg",
+    label: "áº¢nh",
+    iconSrc: "${import.meta.env.BASE_URL}icons/photos.svg",
     app: <PhotosPage />,
   },
   {
     key: "youtube",
     label: "YouTube",
-    iconSrc: "/icons/youtube.png",
+    iconSrc: "${import.meta.env.BASE_URL}icons/youtube.png",
     app: <YouTubePage />,
     background: "#000000",
   },
   {
     key: "wallet",
-    label: "Ví",
-    iconSrc: "/icons/wallet.svg",
+    label: "VÃ­",
+    iconSrc: "${import.meta.env.BASE_URL}icons/wallet.svg",
     app: <WalletPage />,
     background: "#000000",
   },
   {
     key: "calculator",
-    label: "Máy tính",
-    iconSrc: "/icons/calculator.png",
+    label: "MÃ¡y tÃ­nh",
+    iconSrc: "${import.meta.env.BASE_URL}icons/calculator.png",
     app: <CalculatorPage />,
     background: "#000000",
   },
   {
     key: "settings",
-    label: "Cài đặt",
-    iconSrc: "/icons/settings.png",
+    label: "CÃ i Ä‘áº·t",
+    iconSrc: "${import.meta.env.BASE_URL}icons/settings.png",
     app: <SettingsPage />,
     background: "#F2F2F7",
   },
@@ -113,7 +113,7 @@ export default function IosAppFolder() {
             height: `calc(100% + ${extra}px)`,
             backgroundPosition:
               BG_OFFSET_Y >= 0 ? "center top" : "center bottom",
-            backgroundImage: "url('/wallpaper-home.jpeg')",
+            backgroundImage: "url('${import.meta.env.BASE_URL}wallpaper-home.jpeg')",
           }}
         />
         <div
@@ -131,7 +131,7 @@ export default function IosAppFolder() {
             <LocationWidget href={MAPS_URL} />
           </div>
           <div className="col-span-2 row-span-2">
-            <AppFolder title="Ứng dụng" items={ITEMS} />
+            <AppFolder title="á»¨ng dá»¥ng" items={ITEMS} />
           </div>
           <div className="col-span-2 row-span-2">
             <SafariWidget href={HOME} website="docs.google.com" />

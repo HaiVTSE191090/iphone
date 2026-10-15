@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, Mic, Plus, Video } from "lucide-react";
+﻿import { ChevronLeft, ChevronRight, Mic, Plus, Video } from "lucide-react";
 import styles from "./messages.module.css";
 
 const SF_STACK =
@@ -9,16 +9,16 @@ type Entry =
   | { kind: "text"; side: "sent" | "received"; text: string; tapback?: string }
   | { kind: "image"; side: "sent" | "received"; src: string };
 
-// "sent" = Trí, "received" = Như. Sample conversation — swap in your own.
+// "sent" = TrÃ­, "received" = NhÆ°. Sample conversation â€” swap in your own.
 const THREAD: Entry[] = [
-  { kind: "date", text: "Hôm nay 22:41" },
-  { kind: "text", side: "received", text: "Anh ơi, thiệp mời xong chưa đó" },
-  { kind: "text", side: "sent", text: "Xong rồi nè, anh làm hẳn cái iPhone luôn" },
-  { kind: "text", side: "received", text: "Trời, ai mà nghĩ ra vậy 😳" },
-  { kind: "image", side: "received", src: "/message.jpeg" },
-  { kind: "text", side: "received", text: "Chốt tượng bánh cưới này nha", tapback: "❤️" },
-  { kind: "text", side: "sent", text: "Thằng Hải nó làm mà chưa gửi file" },
-  { kind: "text", side: "sent", text: "Nó đang đòi 2 triệu" },
+  { kind: "date", text: "HÃ´m nay 22:41" },
+  { kind: "text", side: "received", text: "Anh Æ¡i, thiá»‡p má»i xong chÆ°a Ä‘Ã³" },
+  { kind: "text", side: "sent", text: "Xong rá»“i nÃ¨, anh lÃ m háº³n cÃ¡i iPhone luÃ´n" },
+  { kind: "text", side: "received", text: "Trá»i, ai mÃ  nghÄ© ra váº­y ðŸ˜³" },
+  { kind: "image", side: "received", src: "${import.meta.env.BASE_URL}message.jpeg" },
+  { kind: "text", side: "received", text: "Chá»‘t tÆ°á»£ng bÃ¡nh cÆ°á»›i nÃ y nha", tapback: "â¤ï¸" },
+  { kind: "text", side: "sent", text: "Tháº±ng Háº£i nÃ³ lÃ m mÃ  chÆ°a gá»­i file" },
+  { kind: "text", side: "sent", text: "NÃ³ Ä‘ang Ä‘Ã²i 2 triá»‡u" },
     { kind: "image", side: "sent", src: "/qr.jpeg" },
 
 
@@ -68,7 +68,7 @@ function ImageBubble({ side, src }: { side: "sent" | "received"; src: string }) 
       <div className={`relative max-w-[75%] ${sent ? styles.sentTail : styles.recvTail}`}>
         <img
           src={src}
-          alt="Tệp đính kèm"
+          alt="Tá»‡p Ä‘Ã­nh kÃ¨m"
           draggable={false}
           className="relative z-10 block w-[200px] rounded-[18px] object-cover select-none"
         />
@@ -94,7 +94,7 @@ export default function MessagesPage({ onBack }: { onBack?: () => void }) {
               <button
                 type="button"
                 onClick={onBack}
-                aria-label="Quay lại"
+                aria-label="Quay láº¡i"
                 className={glassCircle}
               >
                 <ChevronLeft size={24} strokeWidth={2.25} />
@@ -118,7 +118,7 @@ export default function MessagesPage({ onBack }: { onBack?: () => void }) {
               </div>
             </div>
 
-            <button type="button" aria-label="Gọi video" className={glassCircle}>
+            <button type="button" aria-label="Gá»i video" className={glassCircle}>
               <Video size={22} strokeWidth={2} />
             </button>
           </div>
@@ -157,7 +157,7 @@ export default function MessagesPage({ onBack }: { onBack?: () => void }) {
           style={{ paddingBottom: "calc(var(--safe-bottom) + 10px)" }}
         >
           <div className="flex items-center gap-2">
-            <button type="button" aria-label="Thêm" className={glassCircle}>
+            <button type="button" aria-label="ThÃªm" className={glassCircle}>
               <Plus size={24} strokeWidth={2.25} />
             </button>
             <div className="flex h-11 flex-1 items-center gap-2 rounded-full border border-black/10 bg-white/70 px-4 backdrop-blur-xl">

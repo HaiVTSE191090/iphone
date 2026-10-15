@@ -1,31 +1,31 @@
-// Critical resources shown on the lock screen + home screen at first paint.
+﻿// Critical resources shown on the lock screen + home screen at first paint.
 // Album photos (public/photos/) load lazily when Photos opens, so they are
-// intentionally excluded here — booting waits only on what the user sees first.
+// intentionally excluded here â€” booting waits only on what the user sees first.
 export const CRITICAL_ASSETS: readonly string[] = [
   // Wallpapers
-  "/wallpaper-lock.jpeg", // lock screen
-  "/wallpaper-home.jpeg", // home screen
+  "${import.meta.env.BASE_URL}wallpaper-lock.jpeg", // lock screen
+  "${import.meta.env.BASE_URL}wallpaper-home.jpeg", // home screen
 
   // Lock-screen controls
-  "/icons/lock-flashlight.svg",
-  "/icons/lock-camera.svg",
+  "${import.meta.env.BASE_URL}icons/lock-flashlight.svg",
+  "${import.meta.env.BASE_URL}icons/lock-camera.svg",
 
   // Home folder icons
-  "/icons/calendar.png",
-  "/icons/map.svg",
-  "/icons/notes.svg",
-  "/icons/photos.svg",
-  "/icons/youtube.png",
-  "/icons/wallet.svg",
-  "/icons/calculator.png",
-  "/icons/settings.png",
+  "${import.meta.env.BASE_URL}icons/calendar.png",
+  "${import.meta.env.BASE_URL}icons/map.svg",
+  "${import.meta.env.BASE_URL}icons/notes.svg",
+  "${import.meta.env.BASE_URL}icons/photos.svg",
+  "${import.meta.env.BASE_URL}icons/youtube.png",
+  "${import.meta.env.BASE_URL}icons/wallet.svg",
+  "${import.meta.env.BASE_URL}icons/calculator.png",
+  "${import.meta.env.BASE_URL}icons/settings.png",
 
   // Dock icons
-  "/icons/phone.png",
-  "/icons/mess.png",
-  "/icons/safari.png",
+  "${import.meta.env.BASE_URL}icons/phone.png",
+  "${import.meta.env.BASE_URL}icons/mess.png",
+  "${import.meta.env.BASE_URL}icons/safari.png",
 
   // Widgets
-  "/profile.jpeg",
-  "/map-tile.svg",
+  "${import.meta.env.BASE_URL}profile.jpeg",
+  "${import.meta.env.BASE_URL}map-tile.svg",
 ];

@@ -1,4 +1,4 @@
-import { motion, useTransform, type MotionValue } from "framer-motion";
+﻿import { motion, useTransform, type MotionValue } from "framer-motion";
 import { Clock } from "../components/Clock";
 import { MusicWidget } from "../components/MusicWidget";
 
@@ -15,7 +15,7 @@ export default function LockScreen({ y, onUnlock }: LockScreenProps) {
       style={{
         borderBottomLeftRadius: radius,
         borderBottomRightRadius: radius,
-        backgroundImage: "url('/wallpaper-lock.jpeg')",
+        backgroundImage: "url('${import.meta.env.BASE_URL}wallpaper-lock.jpeg')",
       }}
       onClick={onUnlock}
       className="relative w-full h-full font-sans bg-cover bg-center bg-no-repeat overflow-hidden cursor-pointer"
@@ -34,11 +34,11 @@ export default function LockScreen({ y, onUnlock }: LockScreenProps) {
             <button
               type="button"
               onClick={(e) => e.stopPropagation()}
-              aria-label="Đèn pin"
+              aria-label="ÄÃ¨n pin"
               className="w-12 h-12 rounded-full bg-white/15 backdrop-blur-xl grid place-items-center"
               style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.25)" }}
             >
-              <img src="/icons/lock-flashlight.svg" alt="" className="w-[10px] h-[24px]" />
+              <img src="${import.meta.env.BASE_URL}icons/lock-flashlight.svg" alt="" className="w-[10px] h-[24px]" />
             </button>
             <button
               type="button"
@@ -47,7 +47,7 @@ export default function LockScreen({ y, onUnlock }: LockScreenProps) {
               className="w-12 h-12 rounded-full bg-white/15 backdrop-blur-xl grid place-items-center"
               style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.25)" }}
             >
-              <img src="/icons/lock-camera.svg" alt="" className="w-[20px] h-[16px]" />
+              <img src="${import.meta.env.BASE_URL}icons/lock-camera.svg" alt="" className="w-[20px] h-[16px]" />
             </button>
           </div>
         </div>
